@@ -289,7 +289,6 @@ def main():
     
      # Initialize the local classifier
     classifier = LocalEventClassifier()
-    # classifier = EventClassifier(api_key="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")
     db_manager = SQLiteManager(output_db_path)
     
     try:

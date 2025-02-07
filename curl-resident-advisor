@@ -1,0 +1,114 @@
+curl --location 'https: //ra.co/graphql' \
+--header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36' \
+--header 'Content-Type: application/json' \
+--data '{
+    "operationName": "GET_EVENT_LISTINGS",
+    "variables": {
+        "filters": {
+            "areas": {
+                "eq": 20
+            },
+            "listingDate": {
+                "gte": "2024-09-09",
+                "lte": "2024-09-10"
+            }
+        },
+        "filterOptions": {
+            "genre": true,
+            "eventType": true
+        },
+        "pageSize": 20,
+        "page": 1,
+        "sort": {
+            "listingDate": {
+                "order": "ASCENDING"
+            },
+            "score": {
+                "order": "DESCENDING"
+            },
+            "titleKeyword": {
+                "order": "ASCENDING"
+            }
+        }
+    },
+    "query": "query GET_EVENT_LISTINGS($filters: FilterInputDtoInput, $filterOptions: FilterOptionsInputDtoInput, $page: Int, $pageSize: Int, $sort: SortInputDtoInput) {\n  eventListings(\n    filters: $filters\n    filterOptions: $filterOptions\n    pageSize: $pageSize\n    page: $page\n    sort: $sort\n  ) {\n    data {\n      id\n      listingDate\n      event {\n        ...eventListingsFields\n        artists {\n          id\n          name\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    filterOptions {\n      genre {\n        label\n        value\n        count\n        __typename\n      }\n      eventType {\n        value\n        count\n        __typename\n      }\n      location {\n        value {\n          from\n          to\n          __typename\n        }\n        count\n        __typename\n      }\n      __typename\n    }\n    totalResults\n    __typename\n  }\n}\n\nfragment eventListingsFields on Event {\n  id\n  date\n  startTime\n  endTime\n  title\n  contentUrl\n  flyerFront\n  isTicketed\n  interestedCount\n  isSaved\n  isInterested\n  queueItEnabled\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    __typename\n  }\n  __typename\n}\n"
+}'
+
+
+
+GET_EVENT_LISTINGS
+{
+    "operationName": "GET_EVENT_LISTINGS",
+    "variables": {
+        "filters": {
+            "areas": {
+                "eq": 20
+            },
+            "listingDate": {
+                "gte": "2024-09-09",
+                "lte": "2024-09-10"
+            }
+        },
+        "filterOptions": {
+            "genre": true,
+            "eventType": true
+        },
+        "pageSize": 20,
+        "page": 1,
+        "sort": {
+            "listingDate": {
+                "order": "ASCENDING"
+            },
+            "score": {
+                "order": "DESCENDING"
+            },
+            "titleKeyword": {
+                "order": "ASCENDING"
+            }
+        }
+    },
+    "query": "query GET_EVENT_LISTINGS($filters: FilterInputDtoInput, $filterOptions: FilterOptionsInputDtoInput, $page: Int, $pageSize: Int, $sort: SortInputDtoInput) {\n  eventListings(\n    filters: $filters\n    filterOptions: $filterOptions\n    pageSize: $pageSize\n    page: $page\n    sort: $sort\n  ) {\n    data {\n      id\n      listingDate\n      event {\n        ...eventListingsFields\n        artists {\n          id\n          name\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    filterOptions {\n      genre {\n        label\n        value\n        count\n        __typename\n      }\n      eventType {\n        value\n        count\n        __typename\n      }\n      location {\n        value {\n          from\n          to\n          __typename\n        }\n        count\n        __typename\n      }\n      __typename\n    }\n    totalResults\n    __typename\n  }\n}\n\nfragment eventListingsFields on Event {\n  id\n  date\n  startTime\n  endTime\n  title\n  contentUrl\n  flyerFront\n  isTicketed\n  interestedCount\n  isSaved\n  isInterested\n  queueItEnabled\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    __typename\n  }\n  __typename\n}\n"
+}
+{
+    "operationName": "GET_EVENT_LISTINGS",
+    "variables": {
+        "filters": {
+            "areas": {
+                "eq": 20
+            },
+            "listingDate": {
+                "gte": "2024-09-09",
+                "lte": "2024-09-10"
+            }
+        },
+        "filterOptions": {
+            "genre": true,
+            "eventType": true
+        },
+        "pageSize": 20,
+        "page": 2,
+        "sort": {
+            "listingDate": {
+                "order": "ASCENDING"
+            },
+            "score": {
+                "order": "DESCENDING"
+            },
+            "titleKeyword": {
+                "order": "ASCENDING"
+            }
+        }
+    },
+    "query": "query GET_EVENT_LISTINGS($filters: FilterInputDtoInput, $filterOptions: FilterOptionsInputDtoInput, $page: Int, $pageSize: Int, $sort: SortInputDtoInput) {\n  eventListings(\n    filters: $filters\n    filterOptions: $filterOptions\n    pageSize: $pageSize\n    page: $page\n    sort: $sort\n  ) {\n    data {\n      id\n      listingDate\n      event {\n        ...eventListingsFields\n        artists {\n          id\n          name\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    filterOptions {\n      genre {\n        label\n        value\n        count\n        __typename\n      }\n      eventType {\n        value\n        count\n        __typename\n      }\n      location {\n        value {\n          from\n          to\n          __typename\n        }\n        count\n        __typename\n      }\n      __typename\n    }\n    totalResults\n    __typename\n  }\n}\n\nfragment eventListingsFields on Event {\n  id\n  date\n  startTime\n  endTime\n  title\n  contentUrl\n  flyerFront\n  isTicketed\n  interestedCount\n  isSaved\n  isInterested\n  queueItEnabled\n  newEventForm\n  images {\n    id\n    filename\n    alt\n    type\n    crop\n    __typename\n  }\n  pick {\n    id\n    blurb\n    __typename\n  }\n  venue {\n    id\n    name\n    contentUrl\n    live\n    __typename\n  }\n  __typename\n}\n"
+}
+
+GET_EVENT_DETAIL
+{
+    "operationName": "GET_EVENT_DETAIL",
+    "variables": {
+        "id": "1989292",
+        "isAuthenticated": false,
+        "canAccessPresale": false
+    },
+    "query": "query GET_EVENT_DETAIL($id: ID!, $isAuthenticated: Boolean!, $canAccessPresale: Boolean!) {\n  event(id: $id) {\n    id\n    title\n    flyerFront\n    flyerBack\n    content\n    minimumAge\n    cost\n    contentUrl\n    embargoDate\n    date\n    time\n    startTime\n    endTime\n    interestedCount\n    lineup\n    isInterested\n    isSaved\n    isTicketed\n    isFestival\n    dateUpdated\n    resaleActive\n    newEventForm\n    datePosted\n    hasSecretVenue\n    live\n    canSubscribeToTicketNotifications\n    images {\n      id\n      filename\n      alt\n      type\n      crop\n      __typename\n    }\n    venue {\n      id\n      name\n      address\n      contentUrl\n      live\n      area {\n        id\n        name\n        urlName\n        country {\n          id\n          name\n          urlCode\n          isoCode\n          __typename\n        }\n        __typename\n      }\n      location {\n        latitude\n        longitude\n        __typename\n      }\n      __typename\n    }\n    promoters {\n      id\n      name\n      contentUrl\n      live\n      hasTicketAccess\n      tracking(types: [PAGEVIEW]) {\n        id\n        code\n        event\n        __typename\n      }\n      __typename\n    }\n    artists {\n      id\n      name\n      contentUrl\n      urlSafeName\n      __typename\n    }\n    pick {\n      id\n      blurb\n      author {\n        id\n        name\n        imageUrl\n        username\n        contributor\n        __typename\n      }\n      __typename\n    }\n    promotionalLinks {\n      title\n      url\n      __typename\n    }\n    tracking(types: [PAGEVIEW]) {\n      id\n      code\n      event\n      __typename\n    }\n    admin {\n      id\n      username\n      __typename\n    }\n    tickets(queryType: AVAILABLE) {\n      id\n      title\n      validType\n      onSaleFrom\n      priceRetail\n      isAddOn\n      currency {\n        id\n        code\n        __typename\n      }\n      __typename\n    }\n    standardTickets: tickets(queryType: AVAILABLE, ticketTierType: TICKETS) {\n      id\n      validType\n      __typename\n    }\n    userOrders @include(if: $isAuthenticated) {\n      id\n      rAOrderNumber\n      __typename\n    }\n    playerLinks {\n      id\n      sourceId\n      audioService {\n        id\n        name\n        __typename\n      }\n      __typename\n    }\n    childEvents {\n      id\n      date\n      isTicketed\n      __typename\n    }\n    genres {\n      id\n      name\n      slug\n      __typename\n    }\n    setTimes {\n      id\n      lineup\n      status\n      __typename\n    }\n    area {\n      ianaTimeZone\n      __typename\n    }\n    presaleStatus\n    isSignedUpToPresale @include(if: $canAccessPresale)\n    ticketingSystem\n    __typename\n  }\n}\n"
+}
